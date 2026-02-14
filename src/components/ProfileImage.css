@@ -195,16 +195,24 @@
 
 @media (max-width: 768px) {
     .profile-container {
-        position: absolute;
-        top: 320px;
-        left: 20px;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        order: -1;
+        /* Move to top on mobile if flex container allows, or relies on App.js structure */
     }
 
     .profile-frame {
-        width: 130px;
-        height: 130px;
+        width: 140px;
+        height: 140px;
     }
 
+    /* Keep some tech markers for aesthetic but simplify */
     .profile-frame .dimension-line.horizontal.top,
     .profile-frame .dimension-line.vertical.right {
         display: none;
@@ -218,9 +226,7 @@
 
 @media (max-width: 480px) {
     .profile-container {
-        position: absolute;
-        top: 280px;
-        left: 15px;
+        margin-top: 10px;
     }
 
     .profile-frame {
@@ -229,8 +235,8 @@
     }
 
     .profile-frame .corner-marker {
-        width: 18px;
-        height: 18px;
+        width: 15px;
+        height: 15px;
         border-width: 2px;
     }
 }

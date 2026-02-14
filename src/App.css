@@ -87,48 +87,46 @@
         overflow-x: hidden;
         overflow-y: auto;
         height: auto;
-        min-height: 150vh;
-        padding-bottom: 100px;
+        min-height: 100vh;
+        /* Allow content to dictate height */
+        padding-bottom: calc(80px + var(--safe-area-bottom));
+        /* Navbar height + safe area */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center content */
+        padding-top: calc(20px + var(--safe-area-top));
     }
 
     .version-label {
-        position: absolute;
-        bottom: 30px;
-        left: 15px;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 20px;
+        order: 10;
+        /* Move to bottom of flow */
         font-size: 12px;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 20px;
     }
 
     .info-block {
-        position: absolute;
-        bottom: 30px;
-        right: 15px;
-        min-width: 200px;
-    }
-
-    .project-info {
-        font-size: 11px;
-        padding: 8px 12px;
-    }
-
-    .status-indicator {
-        font-size: 13px;
-        padding: 4px 12px;
+        display: none;
+        /* Hide info block on mobile/tablet to save space */
     }
 }
 
 @media (max-width: 480px) {
     .app-container {
-        min-height: 180vh;
-        padding-bottom: 120px;
+        min-height: 100vh;
+        padding-bottom: calc(100px + var(--safe-area-bottom));
+        gap: 20px;
+        /* Add spacing between flex items */
     }
 
     .version-label {
-        bottom: 20px;
-        left: 10px;
         font-size: 10px;
-    }
-
-    .info-block {
-        display: none;
+        margin-top: 10px;
     }
 }

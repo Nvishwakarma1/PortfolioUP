@@ -132,15 +132,23 @@
 /* Responsive */
 @media (max-width: 768px) {
     .tech-stack-container {
+        position: relative;
         bottom: auto;
-        top: 60%;
-        width: 95%;
-        padding: 15px;
+        left: auto;
+        transform: none;
+        top: auto;
+        width: 100%;
+        max-width: 500px;
+        padding: 30px 20px;
+        margin: 0 auto;
+        margin-bottom: 80px;
+        /* Space for navbar */
     }
 
     .tech-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 10px;
+        gap: 15px;
+        justify-content: center;
     }
 
     .tech-card {
@@ -149,5 +157,16 @@
 
     .tech-title {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stack-container {
+        padding: 20px 15px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Force 2 columns on small screens */
     }
 }

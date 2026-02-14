@@ -18,6 +18,17 @@
     --gradient-primary: linear-gradient(135deg, #00E8FF 0%, #0ea5e9 100%);
     --gradient-secondary: linear-gradient(135deg, #C0C0C0 0%, #7c3aed 100%);
 
+    /* Breakpoints */
+    --mobile-width: 480px;
+    --tablet-width: 768px;
+    --desktop-width: 1024px;
+    
+    /* Safe Area Insets */
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-left: env(safe-area-inset-left, 0px);
+    --safe-area-right: env(safe-area-inset-right, 0px);
+
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 

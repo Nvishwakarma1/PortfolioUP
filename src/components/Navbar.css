@@ -95,44 +95,50 @@
 
 @media (max-width: 768px) {
     .cad-navbar {
-        bottom: 20px;
-        right: 15px;
-        padding: 6px;
-        min-width: auto;
+        position: fixed;
+        bottom: calc(20px + var(--safe-area-bottom));
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+        max-width: 400px;
+        padding: 5px;
+        border-radius: 12px;
+        background: rgba(18, 18, 26, 0.95);
+        display: flex;
+        justify-content: center;
+        border-color: var(--primary-cyan);
     }
 
     .nav-container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 3px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
     }
 
     .nav-item {
-        padding: 8px 12px;
-        font-size: 9px;
+        padding: 12px 0;
+        font-size: 11px;
+        flex: 1;
+        text-align: center;
+        border: none;
+        background: transparent;
+    }
+
+    .nav-item:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.05);
     }
 }
 
 @media (max-width: 480px) {
     .cad-navbar {
-        bottom: 15px;
-        right: 10px;
-        left: 10px;
-        padding: 5px;
-        width: auto;
-    }
-
-    .nav-container {
-        justify-content: space-between;
-        gap: 2px;
+        bottom: calc(15px + var(--safe-area-bottom));
+        width: 95%;
+        padding: 4px;
     }
 
     .nav-item {
-        padding: 6px 4px;
-        font-size: 9px;
-        flex: 1;
-        min-width: 0;
-        text-align: center;
-        white-space: nowrap;
+        font-size: 10px;
+        padding: 10px 0;
     }
 }

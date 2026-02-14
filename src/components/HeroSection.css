@@ -132,66 +132,64 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        position: absolute;
-        top: 40px;
-        left: 20px;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+        max-width: 500px;
     }
 
     .hero-tag {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .hero-title {
-        font-size: 42px;
-    }
-
-    .blue-dot {
-        font-size: 42px;
-    }
-
-    .blue-arrow {
         font-size: 32px;
     }
 
+    .blue-dot {
+        font-size: 32px;
+    }
+
+    .blue-arrow {
+        display: none;
+        /* Hide on mobile to save space/reduce clutter */
+    }
+
     .hero-description {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .hero-cta {
         padding: 12px 24px;
         font-size: 13px;
+        margin-top: 20px;
+        width: 100%;
+        /* Full width button on mobile */
+        max-width: 250px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-section {
-        position: absolute;
-        top: 30px;
-        left: 15px;
-    }
-
-    .hero-tag {
-        font-size: 14px;
+        margin-top: 20px;
+        padding: 0 16px;
     }
 
     .hero-title {
-        font-size: 36px;
-    }
-
-    .blue-dot {
-        font-size: 36px;
-    }
-
-    .blue-arrow {
         font-size: 28px;
     }
 
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .hero-cta {
-        padding: 10px 20px;
-        font-size: 12px;
+    .blue-dot {
+        font-size: 28px;
     }
 }
