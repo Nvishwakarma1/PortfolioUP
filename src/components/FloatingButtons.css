@@ -1,0 +1,123 @@
+.floating-buttons-container {
+    position: fixed;
+    top: 30px;
+    right: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: auto;
+    z-index: 60;
+}
+
+.floating-annotation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pointer-events: auto;
+    opacity: 0;
+    animation: fadeInSlide 0.5s ease forwards;
+}
+
+.social-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(18, 18, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--link-color, var(--primary-cyan));
+    color: var(--link-color, var(--primary-cyan));
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 232, 255, 0.3);
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.social-button:hover {
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 0 30px var(--link-color, var(--primary-cyan));
+    background: var(--link-color, var(--primary-cyan));
+}
+
+.annotation-label {
+    background: rgba(18, 18, 26, 0.9);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--link-color, var(--primary-cyan));
+    padding: 8px 16px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    white-space: nowrap;
+    box-shadow: 0 0 20px rgba(0, 232, 255, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.floating-annotation:hover .annotation-label {
+    background: var(--link-color, var(--primary-cyan));
+    color: var(--bg-color);
+    transform: translateX(10px);
+    box-shadow: 0 0 30px var(--link-color, var(--primary-cyan));
+}
+
+/* Fade in and slide animation */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .floating-buttons-container {
+        top: 40px;
+        right: 20px;
+        gap: 12px;
+    }
+
+    .social-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-buttons-container {
+        top: auto;
+        bottom: 100px;
+        right: 15px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .annotation-label {
+        display: none;
+    }
+
+    .social-button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}

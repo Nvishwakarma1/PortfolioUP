@@ -1,0 +1,64 @@
+:root {
+    /* Titanium Cyber Theme (Y3K Aesthetic) - High-Tech Masculine */
+    --bg-color: #0B0D10;
+    --bg-secondary: #141619;
+    --grid-line-color: rgba(0, 232, 255, 0.12);
+    --text-color: #e8eaed;
+    --text-secondary: #9ca3af;
+    --border-color: rgba(0, 232, 255, 0.35);
+
+    /* Accent Colors - Cyber Tech Palette */
+    --primary-cyan: #00E8FF;
+    --primary-purple: #7c3aed;
+    --primary-blue: #0ea5e9;
+    --accent-pink: #C0C0C0;
+    --accent-green: #10b981;
+
+    /* Gradients - Liquid Chrome Effects */
+    --gradient-primary: linear-gradient(135deg, #00E8FF 0%, #0ea5e9 100%);
+    --gradient-secondary: linear-gradient(135deg, #C0C0C0 0%, #7c3aed 100%);
+
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Enable smooth scrolling on mobile */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: visible;
+        scroll-behavior: smooth;
+    }
+}

@@ -1,0 +1,138 @@
+.cad-navbar {
+    position: fixed;
+    bottom: 30px;
+    right: 350px;
+    z-index: 100;
+    background: rgba(18, 18, 26, 0.85);
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--border-color);
+    padding: 8px;
+    box-shadow: 0 0 30px rgba(0, 232, 255, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 24px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--item-color);
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--item-color);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::before {
+    width: 100%;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--item-color);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--item-color);
+}
+
+.nav-text {
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+.nav-line {
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    right: 8px;
+    height: 1px;
+    background: var(--item-color);
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover .nav-line {
+    opacity: 1;
+    height: 2px;
+}
+
+/* Active state effect */
+.nav-item:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .cad-navbar {
+        right: 260px;
+        padding: 6px;
+    }
+
+    .nav-item {
+        padding: 10px 18px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cad-navbar {
+        bottom: 20px;
+        right: 15px;
+        padding: 6px;
+        min-width: auto;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .nav-item {
+        padding: 8px 12px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cad-navbar {
+        bottom: 15px;
+        right: 10px;
+        left: 10px;
+        padding: 5px;
+        width: auto;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+        gap: 2px;
+    }
+
+    .nav-item {
+        padding: 6px 4px;
+        font-size: 9px;
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+        white-space: nowrap;
+    }
+}

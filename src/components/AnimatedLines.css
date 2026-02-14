@@ -1,0 +1,88 @@
+.animated-lines-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.animated-line {
+    position: absolute;
+    will-change: transform;
+}
+
+/* Horizontal lines */
+.animated-line.horizontal {
+    width: 100%;
+    left: 0;
+}
+
+.animated-line.horizontal.ltr {
+    transform: translateX(-100%);
+    animation: moveHorizontalLTR infinite linear;
+}
+
+.animated-line.horizontal.rtl {
+    transform: translateX(100%);
+    animation: moveHorizontalRTL infinite linear;
+}
+
+/* Vertical lines */
+.animated-line.vertical {
+    height: 100%;
+    top: 0;
+}
+
+.animated-line.vertical.ttb {
+    transform: translateY(-100%);
+    animation: moveVerticalTTB infinite linear;
+}
+
+.animated-line.vertical.btt {
+    transform: translateY(100%);
+    animation: moveVerticalBTT infinite linear;
+}
+
+/* Animations */
+@keyframes moveHorizontalLTR {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes moveHorizontalRTL {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveVerticalTTB {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes moveVerticalBTT {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
